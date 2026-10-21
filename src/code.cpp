@@ -25,13 +25,15 @@ std::string AUTHOR_AUTHORSHIP = "I acknowledge that I have worked on this "
 DoubleNode::DoubleNode(NodeValue newValue)
 {
     // TODO: move the initialization of all three fields into an initializer list
-    :nextPtr(nullptr), prevPtr(nullptr), count(0)
+    DoubleNode::DoubleNode(const DoubleNode &newValue)
     {
-        for (DoubleNode *p = newValue.nextPtr; p != nullptr;  p = p->prevPtr;)
+        :prevPtr(nullptr), nextPtr(nullptr), count(0)
         {
-            pushBack(p->value);
+            for (DoubleNode *p = newValue.prevPtr; p != nullptr;  p = p->nextPtr)
+            {
+                pushBack(p->value);
+            }
         }
-        
     }
 }
 

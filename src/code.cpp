@@ -23,18 +23,9 @@ std::string AUTHOR_AUTHORSHIP = "I acknowledge that I have worked on this "
 /// Constructor: initialize ALL THREE fields with a member initializer list.
 /// value <- newValue, prevPtr <- nullptr, nextPtr <- nullptr.
 DoubleNode::DoubleNode(NodeValue newValue)
+    : value(newValue), prevPtr(nullptr), nextPtr(nullptr)
 {
-    // TODO: move the initialization of all three fields into an initializer list
-    DoubleNode::DoubleNode(const DoubleNode &newValue)
-    {
-        :prevPtr(nullptr), nextPtr(nullptr), count(0)
-        {
-            for (DoubleNode *p = newValue.prevPtr; p != nullptr;  p = p->nextPtr)
-            {
-                pushBack(p->value);
-            }
-        }
-    }
+        // TODO: move the initialization of all three fields into an initializer list
 }
 
 /// Const getter: return the stored value.

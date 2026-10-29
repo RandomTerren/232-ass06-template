@@ -130,7 +130,7 @@ DoubleNode *DoublyLinkedList::detachLast()
     }
     else
     {
-        tailPtr = nullptr;
+        headPtr = nullptr;
     }
     node->setPrev(nullptr);
     node->setNext(nullptr);
@@ -206,8 +206,8 @@ void DoublyLinkedList::pushBackValue(NodeValue value)
     }
     else
     {
-        newNode->setNext(tailPtr);
-        tailPtr->setPrev(newNode);
+        newNode->setPrev(tailPtr);
+        tailPtr->setNext(newNode);
         tailPtr = newNode;
     }
     count++;
